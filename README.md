@@ -1,15 +1,17 @@
 # Password Generator
 
 ## Project
+
 This project was developed as part of the module challenge activity.
 The proposal is to use JavaScript create a functional password generator, that prompts the user to pick certain criterias to create the new password.
 
 <br/>
 
 ## Built With
-*   HTML
-*   CSS
-*   JavaScript
+
+- HTML
+- CSS
+- JavaScript
 
 <br/>
 
@@ -28,7 +30,7 @@ The proposal is to use JavaScript create a functional password generator, that p
 
 ## Links
 
-– [Application deployed at live URL]()<br />
+– [Application deployed at live URL](https://rfabreu.github.io/password-generator-ch3/)<br />
 – [GitHub code repository](https://github.com/rfabreu/password-generator-ch3)
 
 <br/><br/>
@@ -38,21 +40,22 @@ The proposal is to use JavaScript create a functional password generator, that p
 <br/>
 
 ### PROPOSAL
+
 ![Screenshot](./Assets/03-javascript-homework-demo.png)
 
 <br/><br/><br/><br/>
 
 ### RESULT
-![Step 1](./Assets/Step1.png)
-![Step 2](./Assets/Step2.png)
-![Step 3](./Assets/Step3.png)
-![Step 4](./Assets/Step4.png)
-![Step 5](./Assets/Step5.png)
-![Step 6](./Assets/Step6.png)
-![Result](./Assets/Result.png)
+
+![Step 1](./Develop/screenshots/Step1.png)
+![Step 2](./Develop/screenshots/Step2.png)
+![Step 3](./Develop/screenshots/Step3.png)
+![Step 4](./Develop/screenshots/Step4.png)
+![Step 5](./Develop/screenshots/Step5.png)
+![Step 6](./Develop/screenshots/Step6.png)
+![Result](./Develop/screenshots/Result.png)
 
 <br/><br/>
-
 
 ## Final considerations
 
