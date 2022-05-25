@@ -16,7 +16,7 @@ specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", 
 // Space for Uppercase conversion
 space = [];
 // Options declared outside the if statement so the can be concatenated upon condition
-var options;
+var options = [];
 // UPPERCASE CHARACTER CONVERSION
 var toUpper = function (u) {
   return u.toUpperCase();
@@ -31,7 +31,7 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   // prompts user input
   input = parseInt(prompt("How many characters would you like your password to have? Choose between 8 and 128 characters."));
-  // USER VALIDATION WITH IF STATEMENT
+  // USER VALIDATION WITH IF AND ELSE IF STATEMENTS
   if (!input) {
     alert("You need to choose the password length!");
   } else if (input < 8 || input > 128) {
@@ -45,75 +45,35 @@ function generatePassword() {
     verifyCharacter = confirm("Will this contain special characters? If Yes, click OK to continue.");
   };
 
-  // ELSE IF FOUR NEGATIVE OPTIONS
+  // TUTOR ASSISTED IN ENHANCING THIS SECTION
+  // IF FOUR NEGATIVE OPTIONS
   if (!verifyLowercase && !verifyUppercase && !verifyNumber && !verifyCharacter) {
-    options = alert("Please choose a criteria!");
+    alert("Please choose a criteria!");
+    return
   }
-  // FIRST IF CONDITIONS THAT USES INPUT PROMPTS TO DETERMINE OPTIONS
-  // ELSE IF FOUR POSITIVE CHOICES
-  else if (verifyLowercase && verifyUppercase && verifyNumber && verifyCharacter) {
-    options = specialChar.concat(number, alpha, alphaSec);
+  // IF POSITIVE OPTIONS
+  if (verifyLowercase) {
+    options = options.concat(alpha);
   }
-
-  // THREE POSITIVE OPTIONS
-  else if (verifyCharacter && verifyNumber && verifyUppercase) {
-    options = specialChar.concat(number, alphaSec);
+  if (verifyUppercase) {
+    options = options.concat(alphaSec);
   }
-  else if (verifyCharacter && verifyNumber && verifyLowercase) {
-    options = specialChar.concat(number, alpha);
+  if (verifyCharacter) {
+    options = options.concat(specialChar);
   }
-  else if (verifyCharacter && verifyLowercase && verifyUppercase) {
-    options = specialChar.concat(alpha, alphaSec);
-  }
-  else if (verifyNumber && verifyLowercase && verifyUppercase) {
-    options = number.concat(alpha, alphaSec);
+  if (verifyNumber) {
+    options = options.concat(number);
   }
 
-  // TWO POSITIVE OPTIONS
-  else if (verifyCharacter && verifyNumber) {
-    options = specialChar.concat(number);
+  // THIS VARIABLE IS A PLACEHOLDER ARRAY FOR USER GENERATED AMOUNT OF LENGTH
+  var password = [];
+  // VARIABLES RANDOM SELECTION
+  for (var i = 0; i < input; i++) {
+    var pickOptions = options[Math.floor(Math.random() * options.length)];
+    password.push(pickOptions);
   }
-  else if (verifyCharacter && verifyLowercase) {
-    options = specialChar.concat(alpha);
-  }
-  else if (verifyCharacter && verifyUppercase) {
-    options = specialChar.concat(alphaSec);
-  }
-  else if (verifyLowercase && verifyNumber) {
-    options = alpha.concat(number);
-  }
-  else if (verifyLowercase && verifyUppercase) {
-    options = alpha.concat(alphaSec);
-  }
-  else if (verifyNumber && verifyUppercase) {
-    options = number.concat(alphaSec);
-  }
-
-  // ONE POSITIVE OPTION
-  else if (verifyCharacter) {
-    options = specialChar;
-  }
-  else if (verifyNumber) {
-    options = number;
-  }
-  else if (verifyLowercase) {
-    options = alpha
-  }
-  // Uppercase conversion will be done by space variable
-  else if (verifyUppercase) {
-    options = space.concat(alphaSec);
-  }
+  return password.join("")
 };
-
-
-// THIS VARIABLE IS A PLACEHOLDER ARRAY FOR USER GENERATED AMOUNT OF LENGTH
-var password = [];
-
-// VARIABLES RANDOM SELECTION
-for (var i = 0; i < input; i++) {
-  var pickOptions = options[Math.floor(Math.random() * options.length)];
-  password.push(pickOptions);
-}
 
 // Write password to the #password input
 function writePassword() {
@@ -126,4 +86,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-document.getElementById("password").textContent = password;
