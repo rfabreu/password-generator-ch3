@@ -41,7 +41,7 @@ The proposal is to use JavaScript create a functional password generator, that p
 
 ### PROPOSAL
 
-![Screenshot](./Assets/03-javascript-homework-demo.png)
+![Screenshot](./Develop/screenshots/03-javascript-homework-demo.png)
 
 <br/><br/><br/><br/>
 
