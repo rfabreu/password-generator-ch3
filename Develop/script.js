@@ -52,7 +52,7 @@ function generatePassword() {
   // FIRST IF CONDITIONS THAT USES INPUT PROMPTS TO DETERMINE OPTIONS
   // ELSE IF FOUR POSITIVE CHOICES
   else if (verifyLowercase && verifyUppercase && verifyNumber && verifyCharacter) {
-    options = character.concat(number, alpha, alphaSec);
+    options = specialChar.concat(number, alpha, alphaSec);
   }
 
   // THREE POSITIVE OPTIONS
@@ -106,6 +106,15 @@ function generatePassword() {
 };
 
 
+// THIS VARIABLE IS A PLACEHOLDER ARRAY FOR USER GENERATED AMOUNT OF LENGTH
+var password = [];
+
+// VARIABLES RANDOM SELECTION
+for (var i = 0; i < input; i++) {
+  var pickOptions = options[Math.floor(Math.random() * options.length)];
+  password.push(pickOptions);
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -117,3 +126,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+document.getElementById("password").textContent = password;
