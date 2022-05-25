@@ -30,24 +30,24 @@ var generateBtn = document.querySelector("#generate");
 // PASSWORD GENERATION FUNCTION
 function generatePassword() {
   // prompts user input
-  input = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
+  input = parseInt(prompt("How many characters would you like your password to have? Choose between 8 and 128 characters."));
   // USER VALIDATION WITH IF STATEMENT
   if (!input) {
-    alert("Thhis needs a value");
+    alert("You need to choose the password length!");
   } else if (input < 8 || input > 128) {
     // user input validation and start prompt
-    input = parseInt(prompt("You must choose between 8 and 128"));
+    input = parseInt(prompt("You must choose between 8 and 128. Try again!"));
   } else {
     // TRIGGER AFTER INPUT IS VALIDATED
-    verifyLowercase = confirm("Will this contain Lowercase letters?");
-    verifyUppercase = confirm("Will this contain Uppercase letters?");
-    verifyNumber = confirm("Will this contain numbers?");
-    verifyCharacter = confirm("Will this contain special characters?");
+    verifyLowercase = confirm("If you want Lowercase characters, click OK to continue.");
+    verifyUppercase = confirm("Will this contain Uppercase letters? Then click OK to continue.");
+    verifyNumber = confirm("Do you want your password to contain numbers? If Yes, click OK to continue.");
+    verifyCharacter = confirm("Will this contain special characters? If Yes, click OK to continue.");
   };
 
   // ELSE IF FOUR NEGATIVE OPTIONS
   if (!verifyLowercase && !verifyUppercase && !verifyNumber && !verifyCharacter) {
-    options = alert("You must choose a criteria!");
+    options = alert("Please choose a criteria!");
   }
   // FIRST IF CONDITIONS THAT USES INPUT PROMPTS TO DETERMINE OPTIONS
   // ELSE IF FOUR POSITIVE CHOICES
